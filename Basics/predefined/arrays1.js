@@ -18,8 +18,8 @@ console.log("After push:", arr1); // Output: [10, 2, 3, 4, 5, 6]
 arr1.pop();
 console.log("After pop:", arr1); // Output: [10, 2, 3, 4, 5]
 
-arr1.unshift(0);
-console.log("After unshift:", arr1); // Output: [0, 10, 2, 3, 4, 5]
+arr1.unshift(1);
+console.log("After unshift:", arr1); // Output: [1, 10, 2, 3, 4, 5]
 
 arr1.shift();
 console.log("After shift:", arr1); // Output: [10, 2, 3, 4, 5]
@@ -69,7 +69,6 @@ const allPositive = arr1.every(x => x > 0);
 console.log("Are all elements in arr1 positive?", allPositive); // Output: true
 
 // Transformation
-
 const sortedArr = arr1.sort((a, b) => a - b);
 console.log("Sorted arr1:", sortedArr); // Output: [2, 3, 4, 5, 10]
 

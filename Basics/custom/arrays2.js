@@ -456,3 +456,5 @@ console.log(
     "Last index:",
     customLastIndexOf(numbers, 18)
 );
+
+
