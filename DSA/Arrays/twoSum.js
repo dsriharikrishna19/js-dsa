@@ -20,17 +20,15 @@
 // Pattern: Nested Loops
 // Time: O(n²)
 // Space: O(1)
+
 const twoSumBruteForceApproach = (nums, target) => {
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
-
             if (nums[i] + nums[j] === target) {
                 return [i, j];
             }
-
         }
     }
-
     return [];
 };
 
@@ -38,6 +36,7 @@ const twoSumBruteForceApproach = (nums, target) => {
 // Pattern: Hash Map - Two Pass
 // Time: O(n)
 // Space: O(n)
+
 const twoSumBetterApproach = (nums, target) => {
 
     const map = new Map();
@@ -67,21 +66,18 @@ const twoSumBetterApproach = (nums, target) => {
 // Pattern: Hash Map - One Pass
 // Time: O(n)
 // Space: O(n)
+
 const twoSumOptimalApproach = (nums, target) => {
 
     const map = new Map();
 
     for (let i = 0; i < nums.length; i++) {
-
         const complement = target - nums[i];
-
         if (map.has(complement)) {
             return [map.get(complement), i];
         }
-
         map.set(nums[i], i);
     }
-
     return [];
 };
 
@@ -92,6 +88,7 @@ const twoSumOptimalApproach = (nums, target) => {
 //
 // IMPORTANT:
 // This approach requires the array to be sorted.
+
 const twoSumTwoPointersApproach = (nums, target) => {
 
     let left = 0;

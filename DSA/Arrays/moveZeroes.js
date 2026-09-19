@@ -39,7 +39,7 @@ const moveZeroesBruteForce = (nums) => {
 // Space: O(n)
 const moveZeroesBetter = (nums) => {
     // TODO: Implement
-      const result = new Array(nums.length);
+    const result = new Array(nums.length);
     let index = 0;
 
     for(let i = 0;i<nums.length;i++){
@@ -49,7 +49,7 @@ const moveZeroesBetter = (nums) => {
         }
     }
 
-    while (index <nums.length){
+    while (index < nums.length){
         result[index] = 0;
         index++
     }

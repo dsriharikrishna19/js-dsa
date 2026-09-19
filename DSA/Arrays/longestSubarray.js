@@ -20,6 +20,7 @@
 // 1. Brute Force Approach
 // Time: O(n²)
 // Space: O(1)
+
 const longestSubarrayBruteForce = (nums, k) => {
     // TODO: Implement
     let maxLength = 0;
@@ -30,7 +31,7 @@ const longestSubarrayBruteForce = (nums, k) => {
         for (let j = 0; j < n + k; j++) {
             csum += nums[j];
         }
-        if(csum <=k){
+        if(csum <= k){
             let length = i-j+1;
             maxLength = Math.max(maxLength,length)
         }
@@ -48,40 +49,20 @@ const longestSubarraySlidingWindow = (nums, k) => {
     let csum = 0;
     let maxLength = 0;
 
-    console.log("Array:", nums);
-    console.log("K:", k);
-
     for (let r = 0; r < nums.length; r++) {
 
         // Add incoming element
         csum += nums[r];
 
-        console.log("\n--------------------");
-        console.log("Right:", r);
-        console.log("Added:", nums[r]);
-        console.log("Current Sum:", csum);
-
         // Shrink window if sum exceeds k
         while (csum > k) {
-
-            console.log("Sum > K");
-            console.log("Removing:", nums[l]);
-
             csum -= nums[l];
             l++;
-
-            console.log("Left:", l);
-            console.log("New Sum:", csum);
         }
 
         // Current window length
         const length = r - l + 1;
-
         maxLength = Math.max(maxLength, length);
-
-        console.log("Window:", nums.slice(l, r + 1));
-        console.log("Length:", length);
-        console.log("Max Length:", maxLength);
     }
 
     return maxLength;

@@ -39,11 +39,7 @@ const maxSumSlidingWindow = (nums, k) => {
 
     console.log("Array:", nums);
     console.log("Window Size:", k);
-
-    // --------------------------------------------------------
     // Step 1: Calculate the first window
-    // --------------------------------------------------------
-
     let windowSum = 0;
 
     for (let i = 0; i < k; i++) {
@@ -51,27 +47,11 @@ const maxSumSlidingWindow = (nums, k) => {
     }
 
     let maxSum = windowSum;
-
-    console.log("\nInitial Window:", nums.slice(0, k));
-    console.log("Initial Sum:", windowSum);
-    console.log("Max Sum:", maxSum);
-
-    console.log("--------------------");
-
-    // --------------------------------------------------------
     // Step 2: Slide the window
-    // --------------------------------------------------------
-
     for (let i = k; i < nums.length; i++) {
 
         const outgoing = nums[i - k];
         const incoming = nums[i];
-
-        console.log("\nBefore Slide:");
-        console.log("Current Window:", nums.slice(i - k, i));
-        console.log("Outgoing:", outgoing);
-        console.log("Incoming:", incoming);
-        console.log("Previous Sum:", windowSum);
 
         // Remove outgoing element
         // Add incoming element
@@ -79,12 +59,6 @@ const maxSumSlidingWindow = (nums, k) => {
 
         // Update maximum
         maxSum = Math.max(maxSum, windowSum);
-
-        console.log("New Window:", nums.slice(i - k + 1, i + 1));
-        console.log("New Sum:", windowSum);
-        console.log("Max Sum:", maxSum);
-
-        console.log("--------------------");
     }
 
     return maxSum;
