@@ -46,23 +46,23 @@ const maxProfitBruteForceApproach = (prices) => {
 // Time: O(n)
 // Space: O(1)
 
-const maxProfitBetterApproach = (prices) => {
+    const maxProfitBetterApproach = (prices) => {
 
-    let minPrice = Infinity;
-    let maxProfit = 0;
+        let minPrice = Infinity;
+        let maxProfit = 0;
 
-    for (const price of prices) {
+        for (const price of prices) {
 
-        if(price < minPrice){
-            minPrice = price
-        } else {
-            maxProfit = Math.max(maxProfit,price-minPrice);
+            if(price < minPrice){
+                minPrice = price
+            } else {
+                maxProfit = Math.max(maxProfit,price-minPrice);
+            }
+
         }
 
-    }
-
-    return maxProfit;
-};
+        return maxProfit;
+    };
 
 
 // 3. Optimal Approach
