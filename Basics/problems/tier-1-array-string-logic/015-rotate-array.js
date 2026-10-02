@@ -79,7 +79,6 @@ function rotateArrayOptimal(nums, k) {
     while (left < right) {
 
       let temp = nums[left];
-
       nums[left] = nums[right];
       nums[right] = temp;
 
@@ -88,18 +87,14 @@ function rotateArrayOptimal(nums, k) {
     }
   }
 
-
   // 1. Reverse entire array
   reverse(nums, 0, nums.length - 1);
-
 
   // 2. Reverse first k elements
   reverse(nums, 0, k - 1);
 
-
   // 3. Reverse remaining elements
   reverse(nums, k, nums.length - 1);
-
 
   return nums;
 }
