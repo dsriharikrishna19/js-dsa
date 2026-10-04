@@ -1,4 +1,6 @@
 // 15. Return the first n Fibonacci numbers, starting with 0, 1.
+
+// The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones.
 function fibonacciSeries(n) {
    if(n === 0){
     return [];
@@ -16,7 +18,7 @@ function fibonacciSeries(n) {
 
   return result;
 }
-
+// checking the function with fibonacci function:
 function fibonacci(n) {
   if (n === 0) {
     return 0;
